@@ -9,7 +9,8 @@ const db = require('./db');
 app.get('/', function(req, res) {
 	res.send("Hello World")
 	var responseData = {};
-	var query = db.query('select * from board', (err, rows) => {
+	var query1 = db.query('Insert into profile (id, name) values (1, "abc")')
+	var query = db.query('select * from profile', (err, rows) => {
 		if (err) {
 			res.send('error')
 		};
