@@ -1,4 +1,3 @@
-require('dotenv').config();
 const { Client } = require('pg');
 
 const pg = new Client({
@@ -7,5 +6,8 @@ const pg = new Client({
     database: process.env.DB_NAME,
     password: process.env.DB_PASS,
     port: process.env.DB_PORT,
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 pg.connect();
