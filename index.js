@@ -10,7 +10,9 @@ app.get('/', function(req, res) {
 	res.send("Hello World")
 	var responseData = {};
 	var query = db.query('select * from board', (err, rows) => {
-		if (err) throw err;
+		if (err) {
+			res.send('error')
+		};
 		if (rows.length) {
 			res.send('Success')
 		} else {
